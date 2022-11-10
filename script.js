@@ -32,5 +32,13 @@ const funcName = function() {
         seconds = 59;
         minutes -= 1;
     };
-    timerShow.textContent = `${minutes} : ${seconds}`;
+
+    function format(val) {
+        if (val < 10) {
+            return `0${val}`;
+        }
+
+        return val;
+    }
+    timerShow.textContent = `${format(minutes)} : ${format(seconds)}`;
 };
